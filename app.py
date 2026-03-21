@@ -88,11 +88,11 @@ with st.sidebar:
     # Dynamically extract the valid IDs straight from the Parquet file!
     # By specifying columns=['building_id'], it loads lightning fast.
     valid_ids = pd.read_parquet('max_demo_train.parquet', columns=['building_id'])['building_id'].unique().tolist()
-
+    
     building_id = st.selectbox(
         "Select a Valid Building ID",
         options=valid_ids,
-        index=building_ids.index(7)
+        index=valid_ids.index(7)
     )
 
     # If the user changes the ID, reset the app memory so it prompts them to run it again
