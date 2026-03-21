@@ -92,7 +92,7 @@ with st.sidebar:
     building_id = st.selectbox(
         "Select a Valid Building ID",
         options=valid_ids,
-        index=0
+        index=building_ids.index(7)
     )
 
     # If the user changes the ID, reset the app memory so it prompts them to run it again
