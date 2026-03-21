@@ -89,8 +89,11 @@ python main.py
 └── building_metadata.csv   # Raw building locations (Using Kaggle API)
 
 🔮 Phase 2 Roadmap
-the next iteration of this project will focus on scalability:
 
-Persistent Storage: Transitioning from an overwriting SQLite database to a persistent Data Warehouse (e.g., PostgreSQL or Snowflake) or a Data Lake (partitioned Parquet files).
+🐳 Dockerization: Containerizing the ETL engine and Streamlit frontend using Docker to ensure "it works on my machine" translates perfectly to any cloud provider (AWS, Azure, or GCP).
 
-Orchestration: Wrapping the ETL engine in a modern orchestrator like Mage.ai, Dagster, or Prefect for scheduled runs and automated retries.
+⚙️ Orchestration: Wrapping the HVACAnalyticsEngine in a modern orchestrator like Mage.ai, Dagster, or Prefect. This will manage task dependencies, automate retries, and provide a dashboard for pipeline health.
+
+🧪 CI/CD Pipeline: Implementing GitHub Actions to automate testing and deployment. Every push to main will automatically run unit tests for the thermodynamic logic and re-deploy the updated container.
+
+🗄️ Persistent Data Warehouse: Transitioning from an overwriting SQLite database to a persistent cloud warehouse (e.g., PostgreSQL or Snowflake) to maintain historical building performance trends over multiple years.
