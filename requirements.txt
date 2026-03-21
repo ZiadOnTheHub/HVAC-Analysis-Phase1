@@ -1,0 +1,7 @@
+streamlit==1.32.0
+pandas==2.2.1
+plotly==5.19.0
+statsmodels==0.14.1
+SQLAlchemy==2.0.28
+requests==2.31.0
+pydeck==0.8.1b0
