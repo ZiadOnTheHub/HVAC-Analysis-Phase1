@@ -1,4 +1,5 @@
 🏢 Commercial HVAC Thermodynamic Analytics Engine (Phase 1)
+
 A Phase 1 Data Engineering Proof of Concept (POC) evaluating the operational health and thermodynamic efficiency of commercial HVAC systems.
 
 This project uses a Medallion Architecture to extract building sensor data and historical weather metrics, transform them via SQL pushdowns, and calculate the direct financial penalty of mechanical inefficiencies.
