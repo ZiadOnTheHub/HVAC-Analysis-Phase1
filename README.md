@@ -40,20 +40,19 @@ Metric 2: Uses Multiple Linear Regression (statsmodels) to calculate an R-square
 
 Metric 3: Establishes a "Perfect Day" baseline, isolates hostile weather hours, and calculates the true Financial Penalty in wasted kWh and 2026 dollar equivalents.
 
+
+
 💻 Tech Stack
 
 Core Engine: Python, Pandas 
 
-
 Database & ORM: SQLite, SQLAlchemy 
-
 
 Data Science & Modeling: Statsmodels (Multiple Linear Regression) 
 
-
 Visualization & UI: Streamlit , Plotly Express / Graph Objects , Pydeck 
 
-File Formats: Parquet (pyarrow), CSV
+Data I/O & Export: Parquet (pyarrow), CSV, Excel (xlsxwriter)
 
 
 🚀 Getting Started
