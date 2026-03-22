@@ -215,18 +215,18 @@ with st.spinner("Executing Medallion Pipeline (Extracting, Transforming, Aggrega
         dl_col1, dl_col2 = st.columns(2)
 
         dl_col1.download_button(
-            label="Download Operational Baseline (CSV)",
-            data=convert_df_to_csv(results['metric_1']),
-            file_name=f"bld_{building_id}_operational_baseline.csv",
-            mime="text/csv",
+            label="Download Operational Baseline (Excel)",
+            data=convert_df_to_excel(results['metric_1']),
+            file_name=f"bld_{building_id}_operational_baseline.xlsx",
+            mime="text/xlsx",
             use_container_width=True
         )
 
         dl_col2.download_button(
-            label="Download R² Performance Data (CSV)",
-            data=convert_df_to_csv(results['metric_2']),
-            file_name=f"bld_{building_id}_thermodynamic_r2.csv",
-            mime="text/csv",
+            label="Download R² Performance Data (Excel)",
+            data=convert_df_to_excel(results['metric_2']),
+            file_name=f"bld_{building_id}_thermodynamic_r2.xlsx",
+            mime="text/xlsx",
             use_container_width=True
         )
 
