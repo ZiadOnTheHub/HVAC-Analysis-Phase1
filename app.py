@@ -5,6 +5,8 @@ import pandas as pd
 from hvac_engine import HVACAnalyticsEngine
 import config
 import pydeck as pdk
+import io
+
 # ==========================================
 # CONFIG & CSS
 # ==========================================
@@ -43,9 +45,13 @@ def load_pipeline_results(building_id: int):
     return engine.run_full_pipeline()
 
 
+
 @st.cache_data
-def convert_df_to_csv(df):
-    return df.to_csv(index=False).encode('utf-8')
+def convert_df_to_excel(df):
+    buffer = io.BytesIO()
+    with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
+        df.to_excel(writer, index=False, sheet_name='Data')
+    return buffer.getvalue()
 
 
 def generate_insights(results):
@@ -213,6 +219,7 @@ with st.spinner("Executing Medallion Pipeline (Extracting, Transforming, Aggrega
         # --- DATA EXPORT ---
         st.subheader("💾 Export Gold Layer Artifacts")
         dl_col1, dl_col2 = st.columns(2)
+
 
         dl_col1.download_button(
             label="Download Operational Baseline (Excel)",
