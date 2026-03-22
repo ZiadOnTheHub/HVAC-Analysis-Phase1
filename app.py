@@ -218,7 +218,7 @@ with st.spinner("Executing Medallion Pipeline (Extracting, Transforming, Aggrega
             label="Download Operational Baseline (Excel)",
             data=convert_df_to_excel(results['metric_1']),
             file_name=f"bld_{building_id}_operational_baseline.xlsx",
-            mime="text/xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             use_container_width=True
         )
 
@@ -226,7 +226,7 @@ with st.spinner("Executing Medallion Pipeline (Extracting, Transforming, Aggrega
             label="Download R² Performance Data (Excel)",
             data=convert_df_to_excel(results['metric_2']),
             file_name=f"bld_{building_id}_thermodynamic_r2.xlsx",
-            mime="text/xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
             use_container_width=True
         )
 
