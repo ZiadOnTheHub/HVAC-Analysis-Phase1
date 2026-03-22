@@ -58,7 +58,7 @@ def generate_insights(results):
     avg_r2 = results['metric_2']['r_squared_value'].mean()
     wasted = results['wasted_dollars_2026_equivalent']
     if avg_r2 < 0.5:
-        issue = "Poor weather responsiveness — indicative of control overrides or faulty mechanical sensors."
+        issue = "Poor weather responsiveness - indicative of control overrides or faulty mechanical sensors."
     else:
         issue = "System responds optimally to environmental conditions."
     return {"avg_r2": avg_r2, "issue": issue, "waste": wasted}
